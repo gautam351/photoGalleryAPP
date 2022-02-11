@@ -4,6 +4,9 @@ const { getAllImages,createGalleryItem, getSingleGalleryItem, deleteGalleryItem,
  
  const router=express.Router();
  
+
+
+// ALL the routes 👍 
 router.route("/").get(getAllImages);
 router.route("/show/:id").get(getSingleGalleryItem);
 router.route("/").post(createGalleryItem);

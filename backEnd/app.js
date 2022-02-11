@@ -8,7 +8,7 @@ app.use(express.json());
 
 const images=require("./routes/imgRoute");
 
-app.use("",images);
+app.use("/api/v1",images);
 
 
 module.exports=app

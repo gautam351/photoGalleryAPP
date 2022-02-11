@@ -1,0 +1,25 @@
+body{
+    background:  #6d6b6b; ;
+}
+
+.header{
+    height: 20vh;
+   color: whitesmoke;
+   font-size: 4vw;
+   text-align: center;
+   text-shadow: 
+}
+.photos{
+    height: 90vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 0px;
+  
+    
+
+}
