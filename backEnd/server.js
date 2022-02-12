@@ -3,13 +3,13 @@ const connectDatabase=require('./config/database');
 const path=require("path");
 const express = require('express');
 const port=4000;
-const NODE_ENV="production";
+
 // connect db
 connectDatabase();
 
 
 // deployement
-__dirname=path.resolve();
+
 
     app.use(express.static(path.join(__dirname,"/frontend/build")));
     app.get('*',(req,res)=>{
