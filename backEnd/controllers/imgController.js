@@ -36,6 +36,34 @@ exports.getSingleGalleryItem=async(req,res)=>{
 }
 
 
+// get limited data
+exports.getLimiteddata=async(req,res)=>{
+    const limit=9;
+    let {page}=req.query;
+    if(!page)page=1;
+    let skip=(page-1)*limit;
+    let galleryItems=await Gallery.find().skip(skip).limit(limit);
+
+    res.status(200).json({
+        success:true,
+        galleryItems,
+        page,
+        
+    })
+}
+
+
+// get images by name
+exports.getImgByName=async(req,res)=>{
+    let {name}=req.query;
+    
+    let galleryItems=await Gallery.find({"ImgName":name});
+    res.status(200).json({
+        success:true,
+        galleryItems
+    })
+}
+
 // update gallery item
 exports.updateGalleryItem=async(req,res,next)=>{
     let galleryItem=await Gallery.findById(req.params.id);

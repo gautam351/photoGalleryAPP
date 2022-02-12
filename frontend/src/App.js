@@ -18,6 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home  />} />
+
           <Route path="/show/:id" element={<Showimg />} />
           <Route path="/new" element={<AddNewImg />} />
           <Route path="/:id/edit" element={<EditImg />} />
