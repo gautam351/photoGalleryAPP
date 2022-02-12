@@ -6,7 +6,7 @@ import "./Showimg.css";
 function Showimg() {
   const { id } = useParams();
   const [gallery, setgallery] = useState(null);
-  let navigate=useNavigate();
+  let navigate = useNavigate();
   useEffect(() => {
     const getSingleImg = async () => {
       const { data } = await axios.get(`/api/v1/show/${id}`);
@@ -15,21 +15,30 @@ function Showimg() {
     getSingleImg();
   }, []);
 
-  const gotoDelete=(e)=>{
-    
+  const gotoDelete = (e) => {
     navigate(`/delete/${id}`);
-  }
-  const gotoEdit=(e)=>{
-navigate(`/${id}/edit`);
-  }
+  };
+  const gotoEdit = (e) => {
+    navigate(`/${id}/edit`);
+  };
   return (
     <div className="imgcointainer">
       <div className="img">
         <img src={gallery?.ImgUrl} alt={gallery?.ImgName} />
-      <div className="editanddelete">
-      <input type="button" className="AddNewImgBtn" onClick={gotoEdit} value="Edit Img" />
-      <input type="button" className="AddNewImgBtn" onClick={gotoDelete} value="Delete Img" />
-      </div>
+        <div className="editanddelete">
+          <input
+            type="button"
+            className="AddNewImgBtn"
+            onClick={gotoEdit}
+            value="Edit Img"
+          />
+          <input
+            type="button"
+            className="AddNewImgBtn"
+            onClick={gotoDelete}
+            value="Delete Img"
+          />
+        </div>
       </div>
       <div className="imgdetails">
         <h1>{gallery?.ImgName}</h1>

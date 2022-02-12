@@ -8,7 +8,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 function EditImg() {
   const { id } = useParams();
-  let navigate=useNavigate();
+  let navigate = useNavigate();
   const [name, setname] = useState();
   const [imgurl, setimgurl] = useState();
   const [imgdetail, setimgdetail] = useState();
@@ -21,24 +21,24 @@ function EditImg() {
     getDetail();
   }, []);
 
- const EditImgDetails=async (e)=>{
-     e.preventDefault();
-     const datat={
-         "ImgUrl":imgurl,
-         "ImgDetails":imgdetail
-     }
-     const {data}=await axios.put(`/api/v1/${id}/edit`,datat);
-     if(data){
-         setimgurl("");
-         setimgdetail("");
-         setconfirmation("Imag Detaials edited");
-     }
-     console.log(data);
- }
+  const EditImgDetails = async (e) => {
+    e.preventDefault();
+    const datat = {
+      ImgUrl: imgurl,
+      ImgDetails: imgdetail,
+    };
+    const { data } = await axios.put(`/api/v1/${id}/edit`, datat);
+    if (data) {
+      setimgurl("");
+      setimgdetail("");
+      setconfirmation("Imag Detaials edited");
+    }
+    console.log(data);
+  };
 
- const gotoHome=(e)=>{
-   navigate("/");
- }
+  const gotoHome = (e) => {
+    navigate("/");
+  };
 
   return (
     <div>
@@ -46,10 +46,7 @@ function EditImg() {
         <div className="AddNewImgBox">
           <h2 className="AddNewImgHeading">Edit Image</h2>
 
-          <form
-            className="AddNewImgForm"
-             onSubmit={EditImgDetails}
-          >
+          <form className="AddNewImgForm" onSubmit={EditImgDetails}>
             <div className="AddNewImgEmail">
               <DnsIcon />
               <input
@@ -94,8 +91,12 @@ function EditImg() {
               value={confirmation}
               id=""
             />
-      <input type="button" className="AddNewImgBtn" onClick={gotoHome} value="Home" />
-
+            <input
+              type="button"
+              className="AddNewImgBtn"
+              onClick={gotoHome}
+              value="Home"
+            />
           </form>
         </div>
       </div>

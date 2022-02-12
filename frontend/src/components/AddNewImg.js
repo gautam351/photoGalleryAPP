@@ -9,25 +9,25 @@ function AddNewImg() {
   const [name, setname] = useState();
   const [imgurl, setimgurl] = useState();
   const [imgdetail, setimgdetail] = useState();
-const [confirmation, setconfirmation] = useState()
-  const AddNewImgSubmit =async (e) => {
+  const [confirmation, setconfirmation] = useState();
+  const AddNewImgSubmit = async (e) => {
     e.preventDefault();
     console.log("submission started");
-  
+
     let myForm = new FormData();
-    const datat={
-        "ImgName":name,
-        "ImgUrl":imgurl,
-        "ImgDetails":imgdetail
-    }
+    const datat = {
+      ImgName: name,
+      ImgUrl: imgurl,
+      ImgDetails: imgdetail,
+    };
     // const config = { headers: { "Content-Type": "application/json" } };
     console.log(datat);
-    const {data}=await axios.post('/api/v1/',datat);
-    if(data){
-        setimgdetail("");
-        setimgurl("");
-        setname("");
-        setconfirmation("submitted successFully");
+    const { data } = await axios.post("/api/v1/", datat);
+    if (data) {
+      setimgdetail("");
+      setimgurl("");
+      setname("");
+      setconfirmation("submitted successFully");
     }
   };
 
@@ -75,7 +75,14 @@ const [confirmation, setconfirmation] = useState()
             </div>
 
             <input type="submit" value="Send" className="AddNewImgBtn" />
-            <input type="text" className="confirm" name="" readOnly value={confirmation} id="" />
+            <input
+              type="text"
+              className="confirm"
+              name=""
+              readOnly
+              value={confirmation}
+              id=""
+            />
           </form>
         </div>
       </div>
