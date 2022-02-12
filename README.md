@@ -21,7 +21,7 @@ Hosted Link : https://photogallerypg-mern.herokuapp.com/
 
 GitHUb Repo Link : https://github.com/gautam351/photoGalleryAPP
 
-Youtube Video Link (UnListed , only shared with hackerEarth team) :
+Youtube Video Link (UnListed , only shared with hackerEarth team) : https://www.youtube.com/watch?v=x9cttuAqKCs
 
 
 # DEPLOYEMENT INSTRUCTIONS:
