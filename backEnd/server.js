@@ -2,7 +2,7 @@ const app=require('./app');
 const connectDatabase=require('./config/database');
 const path=require("path");
 const express = require('express');
-const port=4000;
+const port= process.env.PORT ||4000;
 
 // connect db
 connectDatabase();
