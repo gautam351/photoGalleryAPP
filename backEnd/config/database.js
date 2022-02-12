@@ -2,8 +2,7 @@ const mongoose=require("mongoose");
 
 
 //to provide the connection uri
-const DB_URI="mongodb://localhost:27017/photoGallery";
-
+const DB_URI="mongodb+srv://praveen:praveen@cluster0.qymdl.mongodb.net/photoGallery?retryWrites=true&w=majority";
 //connect function
 const connectDb=()=>{
     mongoose.connect(DB_URI,{useNewUrlParser:true,useUnifiedTopology:true})
